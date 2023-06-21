@@ -7,7 +7,7 @@ function App({ Component, pageProps }) {
   const imagesToPreload = [
     "icons/mer.png",
     "icons/montagnes.png",
-    "icons/morroco.png",
+    "icons/morocco.png",
     "icons/desert.png",
     "icons/4x4.png",
     "icons/facebook.png",
