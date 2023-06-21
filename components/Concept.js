@@ -70,6 +70,7 @@ const Content = styled.p`
   font-size: 1.3rem;
   line-height: 1.5;
   margin-top: 50px;
+  text-align: center;
 `;
 
 const ListContainer = styled.div`
@@ -85,7 +86,7 @@ const LeftList = styled.ul`
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 0;
-  margin-top: 50px;
+  margin: 0 0 0 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -102,7 +103,7 @@ const RightList = styled.ul`
   font-size: 1.2rem;
   line-height: 1.5;
   padding: 0;
-  margin-top: 50px;
+  margin: 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -119,7 +120,16 @@ const RightListItem = styled.li`
     content: "•";
     position: absolute;
     right: 0;
+    
   }
+`;
+
+const FooterContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 45px;
+  width: 95vw;
+  margin-bottom: 20px;
 `;
 
 export default function Concept() {
@@ -143,8 +153,10 @@ export default function Concept() {
           <LeftList>{argumentsLeft}</LeftList>
           <RightList>{argumentsRight}</RightList>
         </ListContainer>
-        <Footer />
       </CoverText>
+        <FooterContainer>
+          <Footer />
+        </FooterContainer>
     </CoverContainer>
   );
 }
