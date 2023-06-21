@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Roxborough';
+    src: url('/fonts/RoxboroughCF-Regular.woff2') format('woff2'),
+         url('/fonts/RoxboroughCF-Regular.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
