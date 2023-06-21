@@ -1,5 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
-const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+const BASE_URL = process.env.BASE_URL || 'https://trip-ride.vercel.app/';
+// const BASE_URL = process.env.BASE_URL || 'http://localhost:3000';
+ 
 
 export default async (req, res) => {
   const { session_id: sessionId } = req.query;
