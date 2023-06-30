@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledInput = styled.input`
   color: #fff;
   font-family: "Roxborough", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5vw;
   font-weight: 700;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
@@ -11,7 +11,7 @@ const StyledInput = styled.input`
   border: none;
   outline: none;
   padding: 0.4vw;
-  margin-right: 20px;
+  margin-right: 2vw;
   max-width: 190px;
   transition: 0.8s;
 

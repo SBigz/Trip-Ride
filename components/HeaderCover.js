@@ -38,7 +38,7 @@ const BlurContainer = styled.div`
 
 const CoverTextRight = styled(({ isFading, ...props }) => <div {...props} />)`
   font-family: "Roxborough", sans-serif;
-  font-size: 3rem;
+  font-size: 3vw;
   text-align: right;
   position: absolute;
   bottom: 180px;
@@ -49,13 +49,28 @@ const CoverTextRight = styled(({ isFading, ...props }) => <div {...props} />)`
 
 const CoverTextLeft = styled.div`
   font-family: "Roxborough", sans-serif;
-  font-size: 2.5rem;
-  line-height: 0;
+  font-size: 6vw;
   position: absolute;
-  bottom: 120px;
-  left: 20px;
+  bottom: 8vh;
+  left: 5vw;
   color: white;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 768px) {
+    left: 4.2vw;
+  }
+
+  @media (min-width: 1024px) {
+    left: 3.7vw;
+  }
+
+  @media (min-width: 1440px) {
+    left: 2.7vw;
+  }
+
+  @media (min-width: 2560px) {
+    left: 1.7vw;
+  }
 `;
 
 const imagesAndTexts = [
@@ -69,36 +84,65 @@ const imagesAndTexts = [
   { img: "/Cover8.webp", title: "Secret Spot" },
 ];
 
-const Title = styled.h1`
-  font-size: 4rem;
-  text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-underline-offset: 7px;
-`;
-
 const SubtitleContainer = styled.div`
   display: flex;
   align-items: center;
-  height: 60px;
+  height: 7vh;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 2560px) {
+    margin-bottom: 100px;
+  }
 `;
 
 const Icon = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   align-self: center;
   margin-right: 20px;
   margin-left: 5px;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (min-width: 768px) {
+    width: 45px;
+    height: 45px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (min-width: 2560px) {
+    width: 100px;
+    height: 100px;
+  }
 `;
 
-export default function HeaderCover({
-  leftTitle,
-  leftSubtitle,
-  littleSubtitle,
-}) {
+const NewsletterFormWrapper = styled.div`
+  display: block;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+`;
+
+export default function HeaderCover({ leftSubtitle, littleSubtitle }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFading, setIsFading] = useState(false);
 
@@ -131,7 +175,6 @@ export default function HeaderCover({
           </BlurContainer>
         </CoverTextRight>
         <CoverTextLeft>
-          <Title>{leftTitle}</Title>
           <SubtitleContainer>
             <Icon src="/icons/4x4.png" />
             <h5>{leftSubtitle}</h5>
@@ -141,7 +184,9 @@ export default function HeaderCover({
             <h5>{littleSubtitle}</h5>
           </SubtitleContainer>
         </CoverTextLeft>
-        <NewsletterForm />
+        <NewsletterFormWrapper>
+          <NewsletterForm />
+        </NewsletterFormWrapper>
       </CoverContainer>
     </>
   );

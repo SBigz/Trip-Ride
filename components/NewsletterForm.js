@@ -5,7 +5,6 @@ import Button from "./Button";
 
 const NewsletterContainer = styled.form`
   display: flex;
-  flex-direction: raw;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
   padding: 0px 20px 0px 20px;
@@ -16,28 +15,74 @@ const NewsletterContainer = styled.form`
   bottom: 15px;
   left: 20px;
   width: calc(100% - 40px);
-  height: 80px;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 768px) {
+    height: 6vh;
+  }
+  
+  @media (min-width: 1024px) {
+    height: 8vh;
+  }
+
+  @media (min-width: 1440px) {
+    height: 10vh;
+  }
+
+  @media (min-width: 2560px) {
+    border-radius: 30px;
+    border: 4px solid black;
+  }
 `;
 
-const Title = styled.h2`
+const FullTitle = styled.h2`
   align-self: center;
   font-family: "Roxborough", sans-serif;
-  font-size: 2.5rem;
+  font-size: 2.5vw;
   font-weight: 700;
   color: lightgray;
+  display: none;
 
   &::before {
     content: "💌";
-    margin-right: 40px;
-    margin-left: 20px;
+    margin-right: 1vw;
+    margin-left: 1vw;
     position: relative;
     top: 2px;
   }
+
+  @media (min-width: 600px) {
+    display: block;
+  }
 `;
+
+const EmojiTitle = styled.h2`
+  font-family: "Roxborough", sans-serif;
+  color: lightgray;
+  align-self: center;
+  font-size: 2.1vw;
+  font-weight: 700;
+
+  &::before {
+    content: "💌";
+    margin-right: 1vw;
+    position: relative;
+  }
+
+  @media (min-width: 600px) {
+    display: none;
+  }
+
+  @media (max-width: 320px) {
+    &::before {
+      content: none;
+    }
+  }
+
+`;
+
 const InputContainer = styled.div`
   display: flex;
-  flex-direction: raw;
   align-items: center;
 `;
 
@@ -63,20 +108,21 @@ export default function NewsletterForm() {
 
   return (
     <NewsletterContainer onSubmit={handleSubmit}>
-      <Title>Newsletter & Offres Spéciales</Title>
+      <FullTitle>Offres spéciales & Newsletter</FullTitle>
+      <EmojiTitle>Offres & Newsletter</EmojiTitle>
       <InputContainer>
         <Input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Votre nom"
+          placeholder="Nom"
           alt
         />
         <Input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Votre email"
+          placeholder="E-mail"
           alt
         />
         <Button type="submit">S'inscrire</Button>
