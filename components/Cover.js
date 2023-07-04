@@ -5,7 +5,7 @@ import CheckoutContainer from "./CheckoutContainer";
 
 const CoverContainer = styled.div`
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: url(${(props) => `/${props.imagepath}`});
   background-size: cover;

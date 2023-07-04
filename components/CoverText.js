@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 const Text = styled.div`
   font-family: "Roxborough", sans-serif;
-  font-size: 1.03rem;
+  font-size: 1.05vw;
   border: 2px solid white;
-  padding: 0 20px 0 20px;
+  padding: 0 15px 0 15px;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   right: 50px;
   left: 50px;
   text-align: ${(props) => (props.textposition === "right" ? "right" : "left")};
@@ -18,13 +18,12 @@ const Text = styled.div`
   border-radius: var(--radius);
   -webkit-backdrop-filter: blur(var(--blur));
   backdrop-filter: blur(var(--blur));
-  --radius: 32px;
+  --radius: 20px;
 `;
 
 export default function CoverText({ textposition, subtitle}) {
   return (
     <Text textposition={textposition}>
- 
       <h2>{subtitle}</h2>
     </Text>
   );

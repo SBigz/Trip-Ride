@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const CardContainer = styled.div`
   font-family: "Roxborough", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.3vw;
   font-weight: 600;
   color: white;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   top: 50px;
   ${(props) =>
     props.textposition === "right" ? "left: 50px;" : "right: 50px;"}
-  width: 500px;
+  width: 35vw;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 5px;
   border-radius: 20px;
@@ -47,29 +47,38 @@ const CardContent = styled.div`
 `;
 
 const Badge = styled.img`
-border: 2px solid black;
+  width: 90px;
+  height: 90px;
+  border: 2px solid black;
   border-radius: 50%;
   position: absolute;
   top: 0;
   ${(props) => (props.textposition === "right" ? "left: 0;" : "right: 0;")}
-  width: 90px;
-  height: 90px;
   margin-top: -45px;
-  ${(props) => (props.textposition === "right" ? "margin-left: -40px;" : "margin-right: -40px;")}
+  ${(props) =>
+    props.textposition === "right"
+      ? "margin-left: -40px;"
+      : "margin-right: -40px;"}
 `;
 
 const Title = styled.h1`
-  font-size: 1.9rem;
+  font-size: 1.9vw;
 `;
 
 const List = styled.ul`
-  font-size: 1.1rem;
+  font-size: 1.1vw;
   list-style-type: none;
   padding: 0;
   margin: 0;
 `;
 
-export default function Card({ cardTitle, activities, price, textposition, badgePath }) {
+export default function Card({
+  cardTitle,
+  activities,
+  price,
+  textposition,
+  badgePath,
+}) {
   activities = activities.map((activity, index) => {
     if (index === activities.length - 1) {
       return <li key={index}>{activity}</li>;
@@ -87,11 +96,7 @@ export default function Card({ cardTitle, activities, price, textposition, badge
   return (
     <CardContainer textposition={textposition}>
       <CardContent>
-        <Badge
-          src={badgePath}
-          alt="medal"
-          textposition={textposition}
-        />
+        <Badge src={badgePath} alt="medal" textposition={textposition} />
         <Title>{cardTitle}</Title>
         <List textposition={textposition}>{activities}</List>
         <h3>{price}</h3>

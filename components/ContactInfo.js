@@ -1,16 +1,21 @@
 import styled from "styled-components";
 
-const Container = styled.footer`
-  position: relative;
-  display: flex;
+const Container = styled.div`
   font-family: "Roxborough", sans-serif;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  display: flex;
+  position: relative;
+  height: 20vh;
   color: #fff;
   border: 2px solid sandybrown;
   border-top: 1px solid sandybrown;
   border-bottom: 1px solid sandybrown;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  @media (max-width: 425px) {
+    height: 100vh;
+  }
 `;
 
 const BackgroundImage = styled.div`
@@ -33,24 +38,45 @@ const ContentWrapper = styled.div`
 `;
 
 const Title = styled.h3`
-  font-size: 2rem;
+  font-size: 3vw;
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 5px;
+
+  @media (max-width: 425px) {
+    font-size: 6vw;
+  }
 `;
 
 const ContactWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 
 const ContactInfos = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  font-size: 1.2rem;
+  font-size: 1.5vw;
   margin: 0 20px 10px;
   text-decoration: none;
+
+  @media (max-width: 425px) {
+    font-size: 4vw;
+    margin-top: 20px;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 23px;
+  }
+
+  @media (min-width: 2560px) {
+    margin-left: 25px;
+  }
 `;
 
 const Link = styled.a`
@@ -64,6 +90,10 @@ const Link = styled.a`
 
 const PhoneIcon = styled.div`
   margin-right: 22px;
+
+  @media (max-width: 425px) {
+    margin-right: 22px;
+  }
 `;
 
 const PhoneContainer = styled.div`
@@ -86,11 +116,72 @@ const Logo = styled.img`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (max-width: 425px) {
+    margin: 0;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+  }
+
+  @media (min-width: 768px) {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-top: -20px;
+    margin-left: 167px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    margin-top: -33px;
+    margin-left: 254px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: -50px;
+    margin-left: 395px;
+  }
+
+  @media (min-width: 2560px) {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: -75px;
+    margin-left: 740px;
+  }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
   margin: 0 30px;
+
+  @media (max-width: 425px) {
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+  }
+
+  @media (min-width: 1024px) {
+    margin-top: -10px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: -22.5px;
+    margin-right: 24px;
+  }
+
+  @media (min-width: 2560px) {
+    margin-right: 50px;
+  }
 `;
 
 const SocialIcons = styled.img`
@@ -101,11 +192,25 @@ const SocialIcons = styled.img`
   &:hover {
     transform: scale(1.1);
   }
+
+  @media (min-width: 1440px) {
+    width: 45px;
+    height: 45px;
+  }
+
+  @media (min-width: 2560px) {
+    width: 90px;
+    height: 90px;
+  }
 `;
 
 const CreditWrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (min-width: 2560px) {
+    font-size: 1.2vw;
+  }
 `;
 
 const MadeWithLove = styled.span`
@@ -127,20 +232,7 @@ export default function ContactInfo() {
               <PhoneNumber href="tel:1234567890">+33 1 23 45 67 89</PhoneNumber>
             </PhoneContainer>
             <div>
-              🕌{" "}
-              <Link
-                href="https://www.google.com/maps/search/?api=1&query=3+boulevard+des+Tapis+Berbères,+666+Meknes"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                3 boulevard des Tapis Berbères, 666 Meknes
-              </Link>
-            </div>
-            <div>
-              💌{" "}
-              <Link href="mailto:jerome.2@me.com">
-              Jerome.2@me.com
-              </Link>
+              💌 <Link href="mailto:jerome.2@me.com">Jerome.2@me.com</Link>
             </div>
           </ContactInfos>
           <Logo src="/logo.png" alt="Logo" />

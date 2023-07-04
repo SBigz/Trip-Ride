@@ -112,8 +112,8 @@ const Icon = styled.img`
   align-self: center;
   margin-right: 20px;
   margin-left: 5px;
-  transition: all 0.2s ease-in-out;
 
+  transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
   }
@@ -131,14 +131,6 @@ const Icon = styled.img`
   @media (min-width: 2560px) {
     width: 100px;
     height: 100px;
-  }
-`;
-
-const NewsletterFormWrapper = styled.div`
-  display: block;
-
-  @media (min-width: 768px) {
-    display: block;
   }
 `;
 
@@ -184,9 +176,7 @@ export default function HeaderCover({ leftSubtitle, littleSubtitle }) {
             <h5>{littleSubtitle}</h5>
           </SubtitleContainer>
         </CoverTextLeft>
-        <NewsletterFormWrapper>
           <NewsletterForm />
-        </NewsletterFormWrapper>
       </CoverContainer>
     </>
   );

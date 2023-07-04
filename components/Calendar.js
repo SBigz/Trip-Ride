@@ -16,7 +16,7 @@ const DatePickerElement = styled(DatePicker)`
   cursor: pointer;
   outline: none;
   font-family: "Roxborough", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2vw;
   font-weight: 600;
   line-height: 1.5;
   width: 100%;

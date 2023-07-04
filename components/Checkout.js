@@ -20,7 +20,7 @@ const glowingButton = keyframes`
 
 const Button = styled.button`
 font-family: "Roxborough", sans-serif;
-font-size: 1.1rem;
+font-size: 1.1vw;
   font-weight: 700;
   padding: 0.6em 2em;
   border: none;
