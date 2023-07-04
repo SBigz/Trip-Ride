@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 
 const Text = styled.div`
@@ -19,6 +18,27 @@ const Text = styled.div`
   -webkit-backdrop-filter: blur(var(--blur));
   backdrop-filter: blur(var(--blur));
   --radius: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.4vw;
+    right: 20px;
+    left: 20px;
+  }
+  
+  @media (max-width: 425px) {
+    font-size: 2vw;
+    text-align: center;
+    right: 20px;
+    left: 20px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 2.6vw;
+    text-align: center;
+    right: 20px;
+    left: 20px;
+  }
+
 `;
 
 export default function CoverText({ textposition, subtitle}) {

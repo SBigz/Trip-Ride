@@ -139,6 +139,7 @@ const PhoneContainer = styled.div`
   background-color: transparent;
   color: white;
   cursor: pointer;
+  padding: 10px;
 
   &:hover {
     background-color: black;

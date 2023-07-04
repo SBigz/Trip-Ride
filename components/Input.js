@@ -12,7 +12,6 @@ const StyledInput = styled.input`
   outline: none;
   padding: 0.4vw;
   margin-right: 2vw;
-  max-width: 190px;
   transition: 0.8s;
 
   &:hover {
@@ -22,7 +21,29 @@ const StyledInput = styled.input`
   &:focus {
     box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.56);
   }
-`;
+
+  
+  @media (max-width: 768px) {
+    width: 100px;
+    font-size: 2.5vw;
+    border-radius: 20px;
+  }
+  
+  @media (max-width: 425px) {
+    width: 50px;
+    height: 20px;
+    font-size: 2.5vw;
+  }
+  
+  @media (max-width: 320px) {
+    width: 40px;
+    height: 17px;
+  }
+
+  @media (min-width: 2560px) {
+    width: 350px;
+  }
+  `;
 
 export default function Input({ name, placeholder }) {
   return <StyledInput type="text" name={name} placeholder={placeholder} />;

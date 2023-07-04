@@ -34,8 +34,8 @@ export default function Index() {
         "Embarquez pour une aventure époustouflante dans l'écrin vert des montagnes marocaines. Que vous soyez un randonneur passionné ou un novice, chaque sentier dévoile une surprise, chaque cime offre une perspective nouvelle. Au cœur de cette nature verdoyante, le temps s'arrête et vous fait vivre une expérience inoubliable. Nuit après nuit, votre campement niché dans les montagnes vous offre un refuge pittoresque. Éveillez vos sens avec la fraîcheur de l'air montagnard, le crépitement du feu de camp, le chant mélodieux des oiseaux. Une escapade en montagne au Maroc, c'est bien plus qu'un simple voyage. C'est une communion avec la nature, un éveil des sens, une aventure gravée dans la pierre.",
       cardTitle: "Mountains Tour",
       activities: [
-        "Randonnée guidée vers les sommets les plus spectaculaires",
         "Découverte de villages traditionnels berbères",
+        "Randonnée vers les sommets les plus spectaculaires",
         "Nuitée en bivouac au cœur des montagnes",
         "Observation de la faune et de la flore locales",
         "Séance de méditation au lever du soleil",

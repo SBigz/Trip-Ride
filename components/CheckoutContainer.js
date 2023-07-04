@@ -17,6 +17,17 @@ const Container = styled.div`
   padding: 10px;
   border-radius: 20px;
   border: 2px solid black;
+
+  @media (max-width: 425px) {
+    height: 50px;
+    top: 5px;
+  }
+
+  @media (max-width: 1024px) {
+    position: relative;
+    width: 90%;
+    left: 5%;
+  }
 `;
 
 const CalendarContainer = styled.div`
@@ -31,6 +42,11 @@ const Icon = styled.img`
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 425px) {
+    width: 30px;
+    height: 30px;
   }
 `;
 

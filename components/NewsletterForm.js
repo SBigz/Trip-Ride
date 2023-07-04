@@ -7,7 +7,7 @@ const NewsletterContainer = styled.form`
   display: flex;
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
-  padding: 0px 20px 0px 20px;
+  padding: 0px 10px 0px 10px;
   border-radius: 20px;
   border: 2px solid black;
   justify-content: space-between;
@@ -16,6 +16,7 @@ const NewsletterContainer = styled.form`
   left: 20px;
   width: calc(100% - 40px);
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  height: 5vh;
 
   @media (min-width: 768px) {
     height: 6vh;
@@ -60,8 +61,9 @@ const EmojiTitle = styled.h2`
   font-family: "Roxborough", sans-serif;
   color: lightgray;
   align-self: center;
-  font-size: 2.1vw;
+  font-size: 3vw;
   font-weight: 700;
+  margin-bottom: 10px;
 
   &::before {
     content: "💌";
@@ -72,18 +74,15 @@ const EmojiTitle = styled.h2`
   @media (min-width: 600px) {
     display: none;
   }
-
-  @media (max-width: 320px) {
-    &::before {
-      content: none;
-    }
-  }
-
 `;
 
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
+ 
+  @media (min-width: 768px) {
+    margin-right: 1vw;
+  }
 `;
 
 export default function NewsletterForm() {
@@ -115,14 +114,14 @@ export default function NewsletterForm() {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nom"
+          placeholder="  Nom"
           alt
         />
         <Input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail"
+          placeholder="  E-mail"
           alt
         />
         <Button type="submit">S'inscrire</Button>

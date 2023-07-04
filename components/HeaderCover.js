@@ -51,25 +51,29 @@ const CoverTextLeft = styled.div`
   font-family: "Roxborough", sans-serif;
   font-size: 6vw;
   position: absolute;
-  bottom: 8vh;
+  bottom: 12vh;
   left: 5vw;
   color: white;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 
   @media (min-width: 768px) {
     left: 4.2vw;
+    bottom: 8vh;
   }
 
   @media (min-width: 1024px) {
     left: 3.7vw;
+    bottom: 8vh;
   }
 
   @media (min-width: 1440px) {
     left: 2.7vw;
+    bottom: 8vh;
   }
 
   @media (min-width: 2560px) {
     left: 1.7vw;
+    bottom: 8vh;
   }
 `;
 

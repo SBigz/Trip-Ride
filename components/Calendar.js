@@ -9,23 +9,19 @@ const DatePickerContainer = styled.div`
   display: flex;
   width: 100%;
   margin-left: 80px;
+
+  @media (max-width: 425px) {
+    margin: -2px 0 0 20px;
+  }
 `;
 
 const DatePickerElement = styled(DatePicker)`
-  border: none;
-  cursor: pointer;
-  outline: none;
-  font-family: "Roxborough", sans-serif;
-  font-size: 1.2vw;
-  font-weight: 600;
-  line-height: 1.5;
-  width: 100%;
+  width: 45%;
   backdrop-filter: blur(4px);
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 10px;
   border-radius: 10px;
-  text-align: center;
 `;
 
 // Ce composant représente l'input personnalisé

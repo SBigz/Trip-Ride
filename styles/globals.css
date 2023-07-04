@@ -10,7 +10,6 @@ body {
   box-sizing: border-box;
 }
 
-
 /* .react-datepicker__input-container {
   // Styles pour le conteneur d'input
 } */
@@ -22,7 +21,7 @@ body {
 .custom-date-picker-input {
   color: #fff;
   font-family: "Roxborough", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.5vw;
   font-weight: 700;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 0.4vw rgba(0, 0, 0, 0.5), 0 0 0 0.15vw transparent;
@@ -34,6 +33,12 @@ body {
   max-width: 190px;
   height: 50px;
   transition: 0.8s;
+
+  @media (max-width: 425px) {
+    font-size: 2.5vw;
+    height: 30px;
+    margin-right: 10px;
+  }
 
   &:hover {
     box-shadow: 0 0 0 0.15vw rgba(135, 207, 235, 0.186);
@@ -47,11 +52,11 @@ body {
 .react-datepicker-popper {
   margin-top: 5px;
 
-   .react-datepicker {
+  .react-datepicker {
     font-family: Roxborough, sans-serif;
     font-size: 1rem;
     color: black;
-    border: 2px solid black; 
+    border: 2px solid black;
     background-color: rgba(0, 0, 0, 0.5);
 
     .react-datepicker__header {
@@ -74,7 +79,7 @@ body {
 
     .react-datepicker__day {
       margin-bottom: 6px;
-      color: whitesmoke; 
+      color: whitesmoke;
       border-radius: 50%;
     }
     .react-datepicker__day-name {
@@ -87,6 +92,5 @@ body {
     .react-datepicker__week-number {
       color: rgb(255, 89, 0);
     }
-
-  } 
-} 
+  }
+}

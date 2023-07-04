@@ -24,6 +24,7 @@ const concept = `Je suis Jérôme De Lucia, avec moi explorez le Maroc en 4x4 et
 
 const CoverContainer = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
   width: 100%;
@@ -41,27 +42,38 @@ const CoverText = styled.div`
   margin: 0 40px 0 40px;
   text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
 
-@media (min-width: 768px) {
-  font-size: 3vw;
-}
+  @media (min-width: 375px) {
+    font-size: 4vw;
+  }
 
-@media (min-width: 1024px) {
-  font-size: 2.5vw;
-}
+  @media (min-width: 425px) {
+    font-size: 3.5vw;
+  }
 
-@media (min-width: 1440px) {
-  font-size: 2vw;
-}
+  @media (min-width: 768px) {
+    font-size: 3vw;
+  }
 
-@media (min-width: 2560px) {
-  font-size: 2vw;
-}
+  @media (min-width: 1024px) {
+    font-size: 2.5vw;
+  }
 
+  @media (min-width: 1440px) {
+    font-size: 2vw;
+  }
+
+  @media (min-width: 2560px) {
+    font-size: 2vw;
+  }
 `;
 
 const Content = styled.p`
-  margin-top: 50px;
+  margin-top: 100px;
   text-align: center;
+
+  @media (min-width: 2560px) {
+    margin-top: 200px;
+  }
 `;
 
 const AnimatedContent = styled(({ isFading, ...rest }) => <p {...rest} />)`
@@ -87,7 +99,9 @@ export default function Concept() {
     setPointsIsFading(true);
     // Après 1 seconde (le temps de l'animation), passer au point fort suivant et le faire réapparaître
     setTimeout(() => {
-      setCurrentPointsIndex((prevIndex) => (prevIndex + 1) % PointsFortsData.length);
+      setCurrentPointsIndex(
+        (prevIndex) => (prevIndex + 1) % PointsFortsData.length
+      );
       setPointsIsFading(false);
     }, 1000);
   }, []);
@@ -119,6 +133,8 @@ export default function Concept() {
       <Header />
       <CoverText>
         <Content>{concept}</Content>
+      </CoverText>
+      <CoverText>
         <AnimatedContent isFading={isPointsFading}>
           {PointsFortsData[currentPointsIndex]}
         </AnimatedContent>
@@ -126,6 +142,7 @@ export default function Concept() {
           {LesPlusData[currentPlusIndex]}
         </AnimatedContent>
       </CoverText>
+
       <NewsletterForm />
     </CoverContainer>
   );

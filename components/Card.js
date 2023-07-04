@@ -33,6 +33,28 @@ const CardContainer = styled.div`
             box-shadow: 6px -6px 12px rgba(0, 0, 0, 0.2), 6px 6px 12px rgba(255, 255, 255, 0.3);
           }
         `}
+
+  @media (min-width: 320px) {
+    font-size: 4vw;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 2vw;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.8vw;
+  }
+
+  @media (max-width: 1024px) {
+    top: 170px;
+  }
+
+  @media (max-width: 425px) {
+    width: 90%;
+    left: 5%;
+    top: 90px;
+  }
 `;
 
 const CardContent = styled.div`
@@ -59,10 +81,33 @@ const Badge = styled.img`
     props.textposition === "right"
       ? "margin-left: -40px;"
       : "margin-right: -40px;"}
+
+  @media (max-width: 425px) {
+    width: 75px;
+    height: 75px;
+
+    margin-top: -25px;
+    ${(props) =>
+      props.textposition === "right"
+        ? "margin-left: -20px;"
+        : "margin-right: -20px;"}
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 1.9vw;
+  font-size: 2vw;
+
+  @media (min-width: 320px) {
+    font-size: 5vw;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 3vw;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 2.5vw;
+  }
 `;
 
 const List = styled.ul`
@@ -70,6 +115,18 @@ const List = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0;
+
+  @media (min-width: 320px) {
+    font-size: 3.2vw;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.2vw;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 1.1vw;
+  }
 `;
 
 export default function Card({
