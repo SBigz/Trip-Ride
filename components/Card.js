@@ -40,6 +40,7 @@ const CardContainer = styled.div`
 
   @media (min-width: 768px) {
     font-size: 2vw;
+    
   }
 
   @media (min-width: 1024px) {
@@ -47,13 +48,13 @@ const CardContainer = styled.div`
   }
 
   @media (max-width: 1024px) {
-    top: 170px;
+    top: 130px;
   }
 
   @media (max-width: 425px) {
     width: 90%;
     left: 5%;
-    top: 90px;
+    top: 80px;
   }
 `;
 

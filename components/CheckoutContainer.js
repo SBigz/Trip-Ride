@@ -27,6 +27,7 @@ const Container = styled.div`
     position: relative;
     width: 90%;
     left: 5%;
+    top: 5px;
   }
 `;
 
@@ -47,6 +48,11 @@ const Icon = styled.img`
   @media (max-width: 425px) {
     width: 30px;
     height: 30px;
+  }
+
+  @media (min-width: 2560px) {
+    height: 80px;
+    width: 80px;
   }
 `;
 
