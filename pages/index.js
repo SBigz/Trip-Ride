@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import HeaderCover from "../components/HeaderCover";
 import Concept from "../components/Concept";
 import Cover from "../components/Cover";
@@ -12,7 +14,7 @@ const Container = styled.div`
   }
 
   .section {
-    height: 100lvh;
+    height: calc(100 * var(--vh));
   }
 `;
 
@@ -75,6 +77,25 @@ export default function Index() {
       price: "1,00 €",
     },
   ];
+
+  useEffect(() => {
+    // Set initial viewport height
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+    // Update the viewport height when the window is resized
+    const handleResize = () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <ReactFullpage
