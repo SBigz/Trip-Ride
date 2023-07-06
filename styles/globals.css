@@ -6,13 +6,6 @@ body {
   background-color: rgba(0, 0, 0, 1);
 }
 
-/* Cette partie cible spécifiquement les appareils mobiles. */
-@media screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    height: -webkit-fill-available; 
-  }
-}
-
 * {
   box-sizing: border-box;
 }
