@@ -12,7 +12,8 @@ const Container = styled.div`
   }
 
   .section {
-    height: calc(100vh - env(safe-area-inset-bottom))
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 `;
 
