@@ -11,10 +11,11 @@ const Container = styled.div`
     display: none;
   }
 
-  .section {
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-  }
+  @media screen and (device-aspect-ratio: 40/71) {                              
+    .section {                           
+        height: 500px;                         
+    }                       
+}
 `;
 
 export default function Index() {
