@@ -6,10 +6,10 @@ body {
   background-color: rgba(0, 0, 0, 1);
 }
 
-/* Cette partie cible spécifiquement Safari sur iOS. */
-@media not all and (min-resolution: 0.001dpcm) {
+/* Cette partie cible spécifiquement les appareils mobiles. */
+@media screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
   body {
-    height: 100%;
+    height: -webkit-fill-available; 
   }
 }
 
