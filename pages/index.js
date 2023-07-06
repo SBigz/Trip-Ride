@@ -13,9 +13,9 @@ const Container = styled.div`
   }
 
   .section {
-    height: 100vh;
+    height: 100dvh;
   }
-  
+
 `;
 
 export default function Index() {
