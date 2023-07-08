@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   top: 50px;
   ${(props) =>
     props.textposition === "right" ? "left: 50px;" : "right: 50px;"}
-  width: 35vw;
+  // width: 35vw;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 5px;
   border-radius: 20px;

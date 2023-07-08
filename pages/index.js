@@ -11,11 +11,6 @@ const Container = styled.div`
     display: none;
   }
 
-  @media screen and (device-aspect-ratio: 40/71) {                              
-    .section {                           
-        height: 500px;                         
-    }                       
-}
 `;
 
 export default function Index() {

@@ -1,6 +1,6 @@
-import { loadStripe } from '@stripe/stripe-js';
-import { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import { loadStripe } from "@stripe/stripe-js";
+import { useState, useEffect } from "react";
+import styled, { keyframes } from "styled-components";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -19,10 +19,11 @@ const glowingButton = keyframes`
 `;
 
 const Button = styled.button`
-font-family: "Roxborough", sans-serif;
-font-size: 2vw;
+  font-family: "Roxborough", sans-serif;
+  font-size: 2vw;
   font-weight: 700;
   padding: 0.6em 2em;
+  margin-left: 10px;
   border: none;
   outline: none;
   color: rgb(255, 255, 255);
@@ -57,7 +58,8 @@ font-size: 2vw;
     height: calc(100% + 4px);
     animation: ${glowingButton} 20s linear infinite;
     transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;  }
+    border-radius: 10px;
+  }
 
   &:after {
     z-index: -1;
@@ -68,7 +70,7 @@ font-size: 2vw;
     background: #222;
     left: 0;
     top: 0;
-    border-radius: 10px;  
+    border-radius: 10px;
   }
 
   @media (min-width: 1440px) {
@@ -87,7 +89,7 @@ export default function Checkout({ product }) {
   useEffect(() => {
     const fetchSession = async () => {
       const response = await fetch(`/api/checkout_sessions/${product.id}`, {
-        method: 'GET',
+        method: "GET",
       });
 
       const data = await response.json();
@@ -115,4 +117,4 @@ export default function Checkout({ product }) {
       Réserver
     </Button>
   );
-};
+}

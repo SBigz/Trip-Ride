@@ -1,4 +1,6 @@
 import { useState, forwardRef } from "react";
+import { useMediaQuery } from 'react-responsive'
+
 import styled from "styled-components";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,34 +10,31 @@ registerLocale("fr-FR", fr);
 const DatePickerContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-left: 80px;
+  margin-left: 15px;
 
   @media (max-width: 425px) {
     margin: -2px 0 0 20px;
   }
 `;
 
-const DatePickerElement = styled(DatePicker)`
-  width: 45%;
-  backdrop-filter: blur(4px);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-`;
-
 // Ce composant représente l'input personnalisé
-const CustomInputStart = forwardRef(({ value, onClick }, ref) => (
-  <button onClick={onClick} ref={ref} className="custom-date-picker-input">
-    {value || "Début du Trip"}
-  </button>
-));
+const CustomInputStart = forwardRef(({ value, onClick }, ref) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 425px)' });
+  return (
+    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '12px' : '14px', width: isMobile ? '80%' : '96%' }}>
+      {value || (isMobile ? 'Début' : 'Début du Trip')}
+    </button>
+  );
+});
 
-const CustomInputEnd = forwardRef(({ value, onClick }, ref) => (
-  <button onClick={onClick} ref={ref} className="custom-date-picker-input">
-    {value || "Fin du Trip"}
-  </button>
-));
+const CustomInputEnd = forwardRef(({ value, onClick }, ref) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 425px)' });
+  return (
+    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '12px' : '14px', width: isMobile ? '80%' : '96%' }}>
+      {value || (isMobile ? 'Fin' : 'Fin du Trip')}
+    </button>
+  );
+});
 
 export default function Calendar({ onDatesChange }) {
   const [startDate, setStartDate] = useState(null);
@@ -71,7 +70,7 @@ export default function Calendar({ onDatesChange }) {
 
   return (
     <DatePickerContainer>
-      <DatePickerElement
+      <DatePicker
         selected={startDate}
         onChange={handleStartDateSelect}
         shouldCloseOnSelect={false}
@@ -87,7 +86,7 @@ export default function Calendar({ onDatesChange }) {
           !unavailableWeeks.includes(date.toISOString().split("T")[0])
         } // Permet de désactiver les dates non disponibles
       />
-      <DatePickerElement
+      <DatePicker
         selected={endDate}
         shouldCloseOnSelect={false}
         minDate={startDate}
