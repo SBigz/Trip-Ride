@@ -10,7 +10,7 @@ registerLocale("fr-FR", fr);
 const DatePickerContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-left: 15px;
+  margin-left: 5px;
 
   @media (max-width: 425px) {
     margin: -2px 0 0 20px;
@@ -21,7 +21,7 @@ const DatePickerContainer = styled.div`
 const CustomInputStart = forwardRef(({ value, onClick }, ref) => {
   const isMobile = useMediaQuery({ query: '(max-width: 425px)' });
   return (
-    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '12px' : '14px', width: isMobile ? '80%' : '96%' }}>
+    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '10px' : '14px', width: isMobile ? '90%' : '96%' }}>
       {value || (isMobile ? 'Début' : 'Début du Trip')}
     </button>
   );
@@ -30,7 +30,7 @@ const CustomInputStart = forwardRef(({ value, onClick }, ref) => {
 const CustomInputEnd = forwardRef(({ value, onClick }, ref) => {
   const isMobile = useMediaQuery({ query: '(max-width: 425px)' });
   return (
-    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '12px' : '14px', width: isMobile ? '80%' : '96%' }}>
+    <button onClick={onClick} ref={ref} className="custom-date-picker-input" style={{ fontSize: isMobile ? '10px' : '14px', width: isMobile ? '90%' : '96%' }}>
       {value || (isMobile ? 'Fin' : 'Fin du Trip')}
     </button>
   );
