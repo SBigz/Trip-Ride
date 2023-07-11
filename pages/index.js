@@ -8,7 +8,7 @@ import styled from "styled-components";
 // Remove Fullpage.js watermark
 const Container = styled.div`
 
-height: calc(100svh - var(--headerHeight));
+  height: 100svh;
 
   .fp-watermark {
     display: none;
