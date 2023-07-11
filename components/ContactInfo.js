@@ -4,18 +4,12 @@ const Container = styled.div`
   font-family: "Roxborough", sans-serif;
   display: flex;
   position: relative;
-  height: 20vh;
+  height: 100vh;
   color: #fff;
   border: 2px solid sandybrown;
-  border-top: 1px solid sandybrown;
-  border-bottom: 1px solid sandybrown;
-
-  align-items: flex-start;
-  justify-content: center;
-
-  @media (max-width: 425px) {
-    height: 100vh;
-  }
+  border-top: 2px solid sandybrown;
+  border-bottom: 2px solid sandybrown;
+  text-align: center;
 `;
 
 const BackgroundImage = styled.div`
@@ -39,9 +33,6 @@ const ContentWrapper = styled.div`
 
 const Title = styled.h3`
   font-size: 3vw;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-top: 5px;
 
   @media (max-width: 425px) {
     font-size: 6vw;
@@ -50,17 +41,13 @@ const Title = styled.h3`
 
 const ContactWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-
-  @media (max-width: 425px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 `;
 
 const ContactInfos = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   font-size: 1.5vw;
   margin: 0 20px 10px;
   text-decoration: none;
@@ -110,78 +97,38 @@ const PhoneNumber = styled.div`
 const Logo = styled.img`
   width: 100px;
   height: 100px;
-  margin-top: -35px;
-  margin-right: 230px;
+  align-self: center;
   transition: all 0.2s ease-in-out;
+  margin-top: 20px;
   &:hover {
     transform: scale(1.1);
-  }
-
-  @media (max-width: 425px) {
-    margin: 0;
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -70%);
   }
 
   @media (min-width: 768px) {
     width: 80px;
     height: 80px;
-    margin: auto;
-    margin-top: -20px;
-    margin-left: 167px;
   }
 
   @media (min-width: 1024px) {
     width: 90px;
     height: 90px;
-    margin: auto;
-    margin-top: -33px;
-    margin-left: 254px;
   }
 
   @media (min-width: 1440px) {
     width: 100px;
     height: 100px;
-    margin: auto;
-    margin-top: -50px;
-    margin-left: 395px;
   }
 
   @media (min-width: 2560px) {
     width: 200px;
     height: 200px;
-    margin: auto;
-    margin-top: -75px;
-    margin-left: 740px;
   }
 `;
 
 const SocialLinks = styled.div`
   display: flex;
-  margin: 0 30px;
-
-  @media (max-width: 425px) {
-    margin: 0;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -90%);
-  }
-
-  @media (min-width: 1024px) {
-    margin-top: -10px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-top: -22.5px;
-    margin-right: 24px;
-  }
-
-  @media (min-width: 2560px) {
-    margin-right: 50px;
-  }
+  align-self: center;
+  margin-top: 40px;
 `;
 
 const SocialIcons = styled.img`
@@ -201,6 +148,20 @@ const SocialIcons = styled.img`
   @media (min-width: 2560px) {
     width: 90px;
     height: 90px;
+  }
+`;
+
+const CguWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+`;
+
+const CguLink = styled.a`
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
@@ -248,6 +209,9 @@ export default function ContactInfo() {
             </a>
           </SocialLinks>
         </ContactWrapper>
+        <CguWrapper>
+          <CguLink href="/cgu">CGU</CguLink>
+        </CguWrapper>
         <CreditWrapper>
           <MadeWithLove>Made with ❤️ by CodeSacha</MadeWithLove>
         </CreditWrapper>
