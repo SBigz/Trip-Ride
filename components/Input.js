@@ -30,13 +30,13 @@ const StyledInput = styled.input`
   }
   
   @media (max-width: 425px) {
-    width: 40px;
+    width: 50px;
     height: 20px;
     font-size: 2.5vw;
   }
   
   @media (max-width: 320px) {
-    width: 30px;
+    width: 40px;
     height: 17px;
   }
 
