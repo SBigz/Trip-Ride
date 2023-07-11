@@ -39,7 +39,7 @@ const NewsletterContainer = styled.form`
 const FullTitle = styled.h2`
   align-self: center;
   font-family: "Roxborough", sans-serif;
-  font-size: 2.5vw;
+  font-size: 2.3vw;
   font-weight: 700;
   color: lightgray;
   display: none;
@@ -61,7 +61,7 @@ const EmojiTitle = styled.h2`
   font-family: "Roxborough", sans-serif;
   color: lightgray;
   align-self: center;
-  font-size: 3vw;
+  font-size: 2.5vw;
   font-weight: 700;
   margin-bottom: 10px;
 

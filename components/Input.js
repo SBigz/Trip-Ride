@@ -24,19 +24,19 @@ const StyledInput = styled.input`
 
   
   @media (max-width: 768px) {
-    width: 100px;
+    width: 90px;
     font-size: 2.5vw;
     border-radius: 20px;
   }
   
   @media (max-width: 425px) {
-    width: 50px;
+    width: 40px;
     height: 20px;
     font-size: 2.5vw;
   }
   
   @media (max-width: 320px) {
-    width: 40px;
+    width: 30px;
     height: 17px;
   }
 
