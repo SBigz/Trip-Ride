@@ -7,10 +7,12 @@ import styled from "styled-components";
 
 // Remove Fullpage.js watermark
 const Container = styled.div`
+
+  height: 100svh;
+
   .fp-watermark {
     display: none;
   }
-
 `;
 
 export default function Index() {
