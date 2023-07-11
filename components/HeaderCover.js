@@ -33,7 +33,11 @@ const AnimatedBackground = styled(
 `;
 
 const BlurContainer = styled.div`
-  filter: blur(3px);
+  filter: blur(3px); // ajuster pour mobile
+
+  @media (max-width: 600px) {
+    filter: blur(1px);
+  }
 `;
 
 const CoverTextRight = styled(({ isFading, ...props }) => <div {...props} />)`
@@ -180,7 +184,7 @@ export default function HeaderCover({ leftSubtitle, littleSubtitle }) {
             <h5>{littleSubtitle}</h5>
           </SubtitleContainer>
         </CoverTextLeft>
-          <NewsletterForm />
+        <NewsletterForm />
       </CoverContainer>
     </>
   );
