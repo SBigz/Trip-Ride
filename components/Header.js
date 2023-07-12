@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Modal from "react-modal";
+import { useState, useRef } from "react";
 
 // Créer un composant Container stylisé
 const Container = styled.div`
@@ -23,7 +25,8 @@ const Container = styled.div`
 
   @media (min-width: 2560px) {
     border-radius: 30px;
-  border: 4px solid black;
+    border: 4px solid black;
+  }
 `;
 
 // Creer un composant TitleContainer (Title + Logo) stylisé
@@ -38,7 +41,7 @@ const TitleContainer = styled.div`
 
 // Creer un composant Logo stylisé
 const Logo = styled.img`
-  width: 40px; 
+  width: 40px;
   height: 40px;
   margin-right: 20px;
   transition: all 0.2s ease-in-out;
@@ -62,8 +65,6 @@ const Logo = styled.img`
     width: 110px;
     height: 110px;
   }
-
-
 `;
 
 // Creer un composant Title stylisé
@@ -89,7 +90,6 @@ const Title = styled.p`
   @media (min-width: 2560px) {
     font-size: 4vw;
   }
-
 `;
 
 // Créer un composant ButtonContainer stylisé
@@ -115,7 +115,7 @@ const StyledButton = styled.button`
   border-radius: 10px;
   background-color: transparent;
   color: white;
-  cursor: pointer;
+  text-decoration: none;
 
   &:hover {
     background-color: black;
@@ -127,6 +127,50 @@ const StyledButton = styled.button`
 
   @media (min-width: 1200px) {
     font-size: 2vw;
+  }
+`;
+
+const StyledModal = styled(Modal)`
+  display: flex;
+  font-family: "Roxborough", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 700;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  border: 2px solid black;
+  height: 15vh;
+  width: 15vw;
+  position: absolute;
+  top: ${(props) => props.position.y + 10}px;
+  left: ${(props) => props.position.x - 10}px;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+
+  // Ajout de la flèche
+  &::before {
+    content: "";
+    position: absolute;
+    top: -20px; // Positionnez la flèche en fonction de vos préférences
+    left: 50px; // Positionnez la flèche en fonction de vos préférences
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+  }
+`;
+
+Modal.setAppElement("#__next");
+
+const ModalLink = styled.a`
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &:visited {
+    color: white;
   }
 `;
 
@@ -188,6 +232,10 @@ const PhoneNumber = styled.a`
   text-decoration: none;
   margin-left: 10px;
 
+  &:visited {
+    color: white;
+  }
+
   ${PhoneContainer}:hover & {
     text-decoration: underline;
   }
@@ -203,6 +251,21 @@ const PhoneNumber = styled.a`
 
 // Utiliser les composants stylisés dans le Header
 export default function Header() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [buttonPosition, setButtonPosition] = useState({ x: 0, y: 0 });
+
+  const buttonRef = useRef();
+
+  const handleButtonClick = () => {
+    const rect = buttonRef.current.getBoundingClientRect();
+    setButtonPosition({ x: rect.left, y: rect.bottom });
+    setModalIsOpen(true);
+  };
+
+  const closeModalAndNavigate = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <Container>
       <TitleContainer>
@@ -210,9 +273,46 @@ export default function Header() {
         <Title>Trip & Ride</Title>
       </TitleContainer>
       <ButtonContainer>
-        <StyledButton>Trips</StyledButton>
-        <StyledButton>Le Concept</StyledButton>
-        <StyledButton>Réserver</StyledButton>
+        <StyledButton ref={buttonRef} onClick={handleButtonClick}>
+          Trips
+        </StyledButton>
+        <StyledModal
+          isOpen={modalIsOpen}
+          onRequestClose={() => setModalIsOpen(false)}
+          contentLabel="Trips Modal"
+          position={buttonPosition}
+          style={{
+            overlay: {
+              backgroundColor: "transparent",
+            },
+          }}
+        >
+          <ul>
+            <li>
+              <ModalLink href="#Mer" onClick={closeModalAndNavigate}>
+                Mer
+              </ModalLink>
+            </li>
+            <li>
+              <ModalLink href="#Montagnes" onClick={closeModalAndNavigate}>
+                Montagne
+              </ModalLink>
+            </li>
+            <li>
+              <ModalLink href="#Urbain" onClick={closeModalAndNavigate}>
+                Urbain
+              </ModalLink>
+            </li>
+            <li>
+              <ModalLink href="#Desert" onClick={closeModalAndNavigate}>
+                Désert
+              </ModalLink>
+            </li>
+          </ul>
+        </StyledModal>
+        <StyledButton>
+          <ModalLink href="#Concept">Le Concept</ModalLink>
+        </StyledButton>
       </ButtonContainer>
       <PhoneContainer>
         <PhoneIcon>📞</PhoneIcon>

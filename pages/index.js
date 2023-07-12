@@ -77,53 +77,63 @@ export default function Index() {
         littleSubtitle="Guide d'exploration au Maroc"
       />
 
-      <Concept />
+      <div id="Concept">
+        <Concept />
+      </div>
 
-      <Cover
-        title="Mer"
-        subtitle={[subtitles[0].subtitle]}
-        cardTitle={subtitles[0].cardTitle}
-        activities={subtitles[0].activities}
-        price={subtitles[0].price}
-        imagepath="Surf.webp"
-        badgePath="/icons/mer.png"
-        product={{ id: "price_1NKhyjAifrYffvQMQ26m0JyN" }}
-      />
+      <div id="Mer">
+        <Cover
+          title="Mer"
+          subtitle={[subtitles[0].subtitle]}
+          cardTitle={subtitles[0].cardTitle}
+          activities={subtitles[0].activities}
+          price={subtitles[0].price}
+          imagepath="Surf.webp"
+          badgePath="/icons/mer.png"
+          product={{ id: "price_1NKhyjAifrYffvQMQ26m0JyN" }}
+        />
+      </div>
 
-      <Cover
-        textposition="right"
-        title="Montagnes"
-        subtitle={[subtitles[1].subtitle]}
-        cardTitle={subtitles[1].cardTitle}
-        activities={subtitles[1].activities}
-        price={subtitles[1].price}
-        imagepath="Mountains.webp"
-        badgePath="/icons/montagnes.png"
-        product={{ id: "price_1NKhz3AifrYffvQMdvW2FXxJ" }}
-      />
+      <div id="Montagnes">
+        <Cover
+          textposition="right"
+          title="Montagnes"
+          subtitle={[subtitles[1].subtitle]}
+          cardTitle={subtitles[1].cardTitle}
+          activities={subtitles[1].activities}
+          price={subtitles[1].price}
+          imagepath="Mountains.webp"
+          badgePath="/icons/montagnes.png"
+          product={{ id: "price_1NKhz3AifrYffvQMdvW2FXxJ" }}
+        />
+      </div>
 
-      <Cover
-        title="Urbain"
-        subtitle={[subtitles[2].subtitle]}
-        cardTitle={subtitles[2].cardTitle}
-        activities={subtitles[2].activities}
-        price={subtitles[2].price}
-        imagepath="Streets.webp"
-        badgePath="/icons/morocco.png"
-        product={{ id: "price_1NKhzSAifrYffvQMTPqalKd2" }}
-      />
+      <div id="Urbain">
+        <Cover
+          title="Urbain"
+          subtitle={[subtitles[2].subtitle]}
+          cardTitle={subtitles[2].cardTitle}
+          activities={subtitles[2].activities}
+          price={subtitles[2].price}
+          imagepath="Streets.webp"
+          badgePath="/icons/morocco.png"
+          product={{ id: "price_1NKhzSAifrYffvQMTPqalKd2" }}
+        />
+      </div>
 
-      <Cover
-        textposition="right"
-        title="Desert"
-        subtitle={[subtitles[3].subtitle]}
-        cardTitle={subtitles[3].cardTitle}
-        activities={subtitles[3].activities}
-        price={subtitles[3].price}
-        imagepath="DesertNight.webp"
-        badgePath="/icons/desert.png"
-        product={{ id: "price_1NKi01AifrYffvQMK6gWxPXq" }}
-      />
+      <div id="Desert">
+        <Cover
+          textposition="right"
+          title="Desert"
+          subtitle={[subtitles[3].subtitle]}
+          cardTitle={subtitles[3].cardTitle}
+          activities={subtitles[3].activities}
+          price={subtitles[3].price}
+          imagepath="DesertNight.webp"
+          badgePath="/icons/desert.png"
+          product={{ id: "price_1NKi01AifrYffvQMK6gWxPXq" }}
+        />
+      </div>
 
       <ContactInfo />
     </Container>
