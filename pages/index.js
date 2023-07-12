@@ -2,17 +2,11 @@ import HeaderCover from "../components/HeaderCover";
 import Concept from "../components/Concept";
 import Cover from "../components/Cover";
 import ContactInfo from "../components/ContactInfo";
-import ReactFullpage from "@fullpage/react-fullpage";
 import styled from "styled-components";
 
 // Remove Fullpage.js watermark
 const Container = styled.div`
-
   height: 100svh;
-
-  .fp-watermark {
-    display: none;
-  }
 `;
 
 export default function Index() {
@@ -76,87 +70,70 @@ export default function Index() {
   ];
 
   return (
-    <ReactFullpage
-      // Fullpage options
-      navigation={true}
-      anchors={[
-        "headerCover",
-        "coverConcept",
-        "coverMer",
-        "coverMountains",
-        "coverUrbain",
-        "coverDesert",
-        "contactInfo",
-      ]}
-      render={({ state, fullpageApi }) => {
-        return (
-          <Container id="fullpage-wrapper">
-            <div className="section">
-              <HeaderCover
-                leftTitle="Trip & Ride"
-                leftSubtitle="4x4 Travel Tours"
-                littleSubtitle="Guide d'exploration au Maroc"
-              />
-            </div>
-            <div className="section">
-              <Concept />
-            </div>
-            <div className="section">
-              <Cover
-                title="Mer"
-                subtitle={[subtitles[0].subtitle]}
-                cardTitle={subtitles[0].cardTitle}
-                activities={subtitles[0].activities}
-                price={subtitles[0].price}
-                imagepath="Surf.webp"
-                badgePath="/icons/mer.png"
-                product={{ id: "price_1NKhyjAifrYffvQMQ26m0JyN" }}
-              ></Cover>
-            </div>
-            <div className="section">
-              <Cover
-                textposition="right"
-                title="Montagnes"
-                subtitle={[subtitles[1].subtitle]}
-                cardTitle={subtitles[1].cardTitle}
-                activities={subtitles[1].activities}
-                price={subtitles[1].price}
-                imagepath="Mountains.webp"
-                badgePath="/icons/montagnes.png"
-                product={{ id: "price_1NKhz3AifrYffvQMdvW2FXxJ" }}
-              />
-            </div>
-            <div className="section">
-              <Cover
-                title="Urbain"
-                subtitle={[subtitles[2].subtitle]}
-                cardTitle={subtitles[2].cardTitle}
-                activities={subtitles[2].activities}
-                price={subtitles[2].price}
-                imagepath="Streets.webp"
-                badgePath="/icons/morocco.png"
-                product={{ id: "price_1NKhzSAifrYffvQMTPqalKd2" }}
-              />
-            </div>
-            <div className="section">
-              <Cover
-                textposition="right"
-                title="Desert"
-                subtitle={[subtitles[3].subtitle]}
-                cardTitle={subtitles[3].cardTitle}
-                activities={subtitles[3].activities}
-                price={subtitles[3].price}
-                imagepath="DesertNight.webp"
-                badgePath="/icons/desert.png"
-                product={{ id: "price_1NKi01AifrYffvQMK6gWxPXq" }}
-              />
-            </div>
-            <div className="section">
-              <ContactInfo />
-            </div>
-          </Container>
-        );
-      }}
-    />
+    <Container id="fullpage-wrapper">
+      <div id="headerCover">
+        <HeaderCover
+          leftTitle="Trip & Ride"
+          leftSubtitle="4x4 Travel Tours"
+          littleSubtitle="Guide d'exploration au Maroc"
+        />
+      </div>
+      <div id="coverConcept">
+        <Concept />
+      </div>
+      <div id="coverMer">
+        <Cover
+          title="Mer"
+          subtitle={[subtitles[0].subtitle]}
+          cardTitle={subtitles[0].cardTitle}
+          activities={subtitles[0].activities}
+          price={subtitles[0].price}
+          imagepath="Surf.webp"
+          badgePath="/icons/mer.png"
+          product={{ id: "price_1NKhyjAifrYffvQMQ26m0JyN" }}
+        />
+      </div>
+      <div id="coverMountains">
+        <Cover
+          textposition="right"
+          title="Montagnes"
+          subtitle={[subtitles[1].subtitle]}
+          cardTitle={subtitles[1].cardTitle}
+          activities={subtitles[1].activities}
+          price={subtitles[1].price}
+          imagepath="Mountains.webp"
+          badgePath="/icons/montagnes.png"
+          product={{ id: "price_1NKhz3AifrYffvQMdvW2FXxJ" }}
+        />
+      </div>
+      <div id="coverUrbain">
+        <Cover
+          title="Urbain"
+          subtitle={[subtitles[2].subtitle]}
+          cardTitle={subtitles[2].cardTitle}
+          activities={subtitles[2].activities}
+          price={subtitles[2].price}
+          imagepath="Streets.webp"
+          badgePath="/icons/morocco.png"
+          product={{ id: "price_1NKhzSAifrYffvQMTPqalKd2" }}
+        />
+      </div>
+      <div id="coverDesert">
+        <Cover
+          textposition="right"
+          title="Desert"
+          subtitle={[subtitles[3].subtitle]}
+          cardTitle={subtitles[3].cardTitle}
+          activities={subtitles[3].activities}
+          price={subtitles[3].price}
+          imagepath="DesertNight.webp"
+          badgePath="/icons/desert.png"
+          product={{ id: "price_1NKi01AifrYffvQMK6gWxPXq" }}
+        />
+      </div>
+      <div id="contactInfo">
+        <ContactInfo />
+      </div>
+    </Container>
   );
 }
